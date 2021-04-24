@@ -8,7 +8,18 @@ Dataset represents performance metrics (impressions, clicks, installs, spend, re
 Dataset is expected to be stored and processed in a relational database.
 
 ## Getting started
-Go to project directory and apply migrations:
+Go to project directory and create a virtual enviroment and activate it:
+
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install all dependencies from requirements.txt:
+
+```pip3 install -r requirements.txt```
+
+Apply migrations:
 
 ```
 python3 manage.py migrate
@@ -34,6 +45,12 @@ with open('dataset.csv') as csvfile:
          r = DatasetModel(date=row['date'], channel=row['channel'], country=row['country'], os=row['os'], impressions=row['impressions'], clicks=row['clicks'], installs=row['installs'], spend=row['spend'], revenue=row['revenue'])
          r.save()
 ```
+
+Close shell with ```exit()``` or ```^D``` and you're good to go.
+
+Start the app with:
+
+```python3 manage.py runserver```
 
 ## Supported parameters:
 1. `sort_by={field}` - Sort resulting dataset by given field. Default sorting order is ascending, if you want to sort the dataset in descending order, just add minus sign before the field just like this: `sort_by=-{field}`
