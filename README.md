@@ -36,7 +36,7 @@ with open('dataset.csv') as csvfile:
 ```
 
 ## Supported parameters:
-1. `sort_by={field}` - Sort resulting dataset by given field. Default sorting order is ascending, if you want to sort the dataset in descending order, just add minus sign before the field just like this `sort_by=-{field}`
+1. `sort_by={field}` - Sort resulting dataset by given field. Default sorting order is ascending, if you want to sort the dataset in descending order, just add minus sign before the field just like this: `sort_by=-{field}`
 2. `group_by={field1,field2}` - Group resulting dataset by one or more columns from this list: date, channel, country, os.
 3. Filter dataset by fields from this list: date, channel, country, os:
    
